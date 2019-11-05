@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Triangle.Tests
 {
-    [TestFixture()]
+    [TestFixture]
     public class TriangleTests
     {
-        [Test()]
+        [Test]
         public void Triangle_2and2and4_falseReturned()
         {
             float x = 2;
@@ -23,7 +23,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_0and2and4_falseReturned()
         {
             float x = 0;
@@ -35,7 +35,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_0and0and1_falseReturned()
         {
             float x = 0;
@@ -47,7 +47,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_3and0and3_falseReturned()
         {
             float x = 3;
@@ -59,7 +59,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_0and0and0_falseReturned()
         {
             float x = 0;
@@ -71,7 +71,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_3and1and0_falseReturned()
         {
             float x = 3;
@@ -83,7 +83,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_minus3and1and8_falseReturned()
         {
             float x = -3;
@@ -95,7 +95,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_3and1and8_trueReturned()
         {
             float x = 3;
@@ -107,7 +107,7 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
+        [Test]
         public void Triangle_1andminus1and8_falseReturned()
         {
             float x = 1;
@@ -119,17 +119,10 @@ namespace Triangle.Tests
             bool actual = t.Triangle(x, y, z);
             Assert.AreEqual(expected, actual);
         }
-        [Test()]
-        public void Triangle_10and15andminus8_trueReturned()
+        [Test]
+        public void Triangle_10and15andminus8_falseReturned()
         {
-            float x = 10;
-            float y = 15;
-            float z = -8;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(false, new TriangleAccept().Triangle(10,15,-8));
         }
 
     }

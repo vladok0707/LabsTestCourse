@@ -12,8 +12,8 @@ namespace Triangle
         {
             if (x > 0 && y > 0 && z > 0)
             {
-                if (x + y < z || x + z < y || y + z < x) return true;
-                else return false;
+                return (x + y < z || x + z < y || y + z < x);
+
             }
             else return false;
         }
