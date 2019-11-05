@@ -12,117 +12,54 @@ namespace Triangle.Tests
     public class TriangleTests
     {
         [Test]
-        public void Triangle_2and2and4_falseReturned()
+        public void FirstUnitTest()
         {
-            float x = 2;
-            float y = 2;
-            float z = 4;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(2, 2, 4));
         }
         [Test]
-        public void Triangle_0and2and4_falseReturned()
+        public void SecondUnitTest()
         {
-            float x = 0;
-            float y = 2;
-            float z = 4;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(0, 2, 4));
         }
         [Test]
-        public void Triangle_0and0and1_falseReturned()
+        public void ThirdUnitTest()
         {
-            float x = 0;
-            float y = 0;
-            float z = 1;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(0, 0, 1));
         }
         [Test]
-        public void Triangle_3and0and3_falseReturned()
+        public void FourthUnitTest()
         {
-            float x = 3;
-            float y = 0;
-            float z = 3;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(3, 0, 3));
         }
         [Test]
-        public void Triangle_0and0and0_falseReturned()
+        public void FifthUnitTest()
         {
-            float x = 0;
-            float y = 0;
-            float z = 0;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(0, 0, 0));
         }
         [Test]
-        public void Triangle_3and1and0_falseReturned()
+        public void SixthUnitTest()
         {
-            float x = 3;
-            float y = 1;
-            float z = 0;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(3, 1, 0));
         }
         [Test]
-        public void Triangle_minus3and1and8_falseReturned()
+        public void SeventhUnitTest()
         {
-            float x = -3;
-            float y = 1;
-            float z = 0;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(-3, 1, 0));
         }
         [Test]
-        public void Triangle_3and1and8_trueReturned()
+        public void EighthUnitTest()
         {
-            float x = 3;
-            float y = 1;
-            float z = 8;
-            bool expected = true;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(3, 1, 8));
         }
         [Test]
-        public void Triangle_1andminus1and8_falseReturned()
+        public void NinthUnitTest()
         {
-            float x = 1;
-            float y = -1;
-            float z = 8;
-            bool expected = false;
-
-            TriangleAccept t = new TriangleAccept();
-            bool actual = t.Triangle(x, y, z);
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(TriangleAccept.Check(3, 6, 3));
         }
         [Test]
-        public void Triangle_10and15andminus8_falseReturned()
+        public void TenthUnitTest()
         {
-            Assert.AreEqual(false, new TriangleAccept().Triangle(10,15,-8));
+            Assert.IsTrue(TriangleAccept.Check(5, 7, 3));
         }
 
     }
