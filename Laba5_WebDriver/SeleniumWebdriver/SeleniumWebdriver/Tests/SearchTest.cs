@@ -11,7 +11,7 @@ namespace SeleniumWebdriver.Tests
         string ErrorEmail = "Некорректный адрес электронной почты!";
 
         [Test]
-        public void SearchWithEqualDepartureAndDestinationPlace()
+        public void CheckErrorWhenRegisterFieldsEmpty()
         {
             IWebElement link = _webDriver.FindElement(By.XPath("//a[@class='dropdown-toggle']"));
             link.Click();
@@ -20,8 +20,8 @@ namespace SeleniumWebdriver.Tests
             link = _webDriver.FindElement(By.XPath("//a[@class='button btn-primary button_oc btn']"));
             link.Click();
             Thread.Sleep(1000);
-            link = _webDriver.FindElement(By.XPath("//div[@class='col-sm-10']//div[@data-rule='regexp']"));
-            Assert.AreEqual(ErrorEmail, link.Text);
+            IWebElement emailErrorElement = _webDriver.FindElement(By.XPath("//div[@class='col-sm-10']//div[@data-rule='regexp']"));
+            Assert.AreEqual(ErrorEmail, emailErrorElement.Text);
         } 
 
         string urlVkDomsBy= "https://vk.com/doms.market";
