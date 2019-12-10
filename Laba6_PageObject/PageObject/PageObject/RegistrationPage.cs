@@ -32,7 +32,7 @@ namespace PageObject.PageObject
         public RegistrationPage ClickOnRegistationPersonButton()
         {
             RegistrationPersonButton.Click();
-            return new RegistrationPage(Driver);
+            return this;
         }
     }
 }

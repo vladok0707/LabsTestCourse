@@ -13,8 +13,8 @@ namespace SeleniumWebdriver.Tests
         public void StartBrowser()
         {
             _webDriver = new ChromeDriver();
-            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
-            _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
+            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
+            _webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
             _webDriver.Manage().Window.Maximize();
             _webDriver.Navigate().GoToUrl("https://doms.by/");
         }

@@ -11,6 +11,7 @@ namespace PageObject.PageObject
         private const string accountButtonField = "//a[@class='dropdown-toggle']";
         private const string registrationButtonOnHeaderField = "//i[@class='fa fa-user-plus']";
         private const string shippingAndPayment = "//*[@id=\"top\"]/div/ul/li[2]/a";
+        private const string specialMenuField = "//*[@id=\"bs-megamenu\"]/ul/li[1]/a";
 
         [FindsBy(How = How.XPath, Using = accountButtonField)]
         public IWebElement AccountButton { get; set; }
@@ -20,6 +21,9 @@ namespace PageObject.PageObject
 
         [FindsBy(How = How.XPath, Using = shippingAndPayment)]
         public IWebElement ShippingAndPaymentButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = specialMenuField)]
+        public IWebElement specialMenuButton { get; set; }
 
         private MainPage()
         {
@@ -47,6 +51,12 @@ namespace PageObject.PageObject
         {
             ShippingAndPaymentButton.Click();
             return new ShippingAndPaymentPage(Driver);
+        }
+
+        public SpecialPage ClickMenuSpecialButton()
+        {
+            specialMenuButton.Click();
+            return new SpecialPage(Driver);
         }
 
 

@@ -53,6 +53,7 @@
     <Compile Include="PageObject\BasePage.cs" />
     <Compile Include="PageObject\MainPage.cs" />
     <Compile Include="PageObject\RegistrationPage.cs" />
+    <Compile Include="PageObject\SpecialPage.cs" />
     <Compile Include="PageObject\ShippingAndPaymentPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

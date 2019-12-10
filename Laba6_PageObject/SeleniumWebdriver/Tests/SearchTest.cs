@@ -29,6 +29,15 @@ namespace SeleniumWebdriver.Tests
             string WarningText = "Внимание! Все цены на сайте указаны в белорусских рублях!";
             Assert.AreEqual(WarningText, shippingAndPaymentPage.WarningText.Text);
         }
-       
+
+        [Test]
+        public void CheckSpecialProduct()
+        {
+            MainPage mainPage = new MainPage(_webDriver);
+            var specialPage = mainPage.ClickMenuSpecialButton();
+            string specialText = "СКИДКА";
+            Assert.AreEqual(specialText, specialPage.SpecialText.Text);
+        }
+
     }
 }
