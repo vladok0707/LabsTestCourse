@@ -51,10 +51,16 @@ namespace GitHubAutomation.Pages
             return new ShippingAndPaymentPage(driver);
         }
 
-      
+        public SpecialPage ClickMenuSpecialButton()
+        {
+            specialMenuButton.Click();
+            return new SpecialPage(driver);
+        }
 
-       
 
-       
+
+
+
+
     }
 }

@@ -28,9 +28,15 @@ namespace Framework.Driver
                         break;
                     default:
                         new DriverManager().SetUpDriver(new ChromeConfig());
-                        driver = new ChromeDriver();
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.AddArguments("--whitelist-ip *");
+                        chromeOptions.AddArguments("--proxy-server='direct://'");
+                        chromeOptions.AddArguments("--proxy-bypass-list=*");
+                        driver = new ChromeDriver(chromeOptions);
                         break;
                 }
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
+                driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
                 driver.Manage().Window.Maximize();
             }
             return driver;

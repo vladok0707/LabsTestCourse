@@ -35,7 +35,19 @@ namespace Framework.Tests
             {
                 Driver.Navigate().GoToUrl("https://doms.by/");
                 ShippingAndPaymentPage sPage = new MainPage(Driver).CliclToShippingAndPaymentButton();
-                Assert.AreEqual("Внимание! Все цены на сайте указаны в белорусских рублях!", sPage.WarningText.Text);
+                Assert.AreEqual("Все цены на сайте указаны в белорусских рублях!", sPage.WarningText.Text);
+
+            });
+        }
+
+        [Test]
+        public void CheckSpecialProduct()
+        {
+            MakeScreenshotWhenFail(() =>
+            {
+                Driver.Navigate().GoToUrl("https://doms.by/");
+                SpecialPage sPage = new MainPage(Driver).ClickMenuSpecialButton();
+                Assert.AreEqual("СКИДКА", sPage.SpecialText.Text);
 
             });
         }
